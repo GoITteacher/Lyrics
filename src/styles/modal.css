@@ -1,0 +1,49 @@
+body.hide-modal .backdrop {
+  display: none;
+  opacity: 0;
+}
+
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(21, 21, 21, 0.367);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(10);
+}
+
+.modalka {
+  z-index: 101;
+  min-width: 30vw;
+  min-height: 30vh;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: rgb(222, 222, 222);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 50px;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  gap: 10px;
+  width: 50vw;
+}
+
+.create-form > textarea {
+  min-height: 70px;
+}

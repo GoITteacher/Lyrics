@@ -1,0 +1,22 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npx parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "parcel": "^2.10.3",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "type": "module",
+  "devDependencies": {
+    "buffer": "^6.0.3"
+  }
+}

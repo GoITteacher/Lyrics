@@ -1,0 +1,23 @@
+.sidebar {
+  height: 80vh;
+  width: 20vw;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+}
+
+.lyric-list {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  height: 90%;
+  overflow-y: auto;
+  padding: 10 0;
+}
+
+.lyric-list > li {
+  cursor: pointer;
+}
+
+.liric-filter {
+}

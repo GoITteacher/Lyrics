@@ -1,0 +1,30 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.fb {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  object-fit: fit-content;
+}
