@@ -1,8 +1,7 @@
 import axios from "axios";
 const password = prompt("Enter password");
 const axios2 = axios.create({
-  // baseURL: "http://localhost:3000/dev/records",
-  baseURL: "https://kqlrwx9n9j.execute-api.us-east-2.amazonaws.com/dev/records",
+  baseURL: "https://uuxqwqj6ol.execute-api.us-east-1.amazonaws.com/dev/records",
   params: {
     API_KEY: password,
   },
