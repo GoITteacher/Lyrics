@@ -7,7 +7,6 @@ export function createModal(modal, listener) {
 function template() {
   return `<form class="create-form js-create-form">
 <input type="number" placeholder="idx" name="idx" required min="0" />
-<input type="text" placeholder="name" name="name" required />
 <input type="text" placeholder="title" name="title" required />
 <input type="text" placeholder="author" name="author" />
 <input type="number" placeholder="tempo" name="tempo"/>
