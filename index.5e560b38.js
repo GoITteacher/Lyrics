@@ -519,9 +519,8 @@ ${t.name}
   <div class="base-info__text">
     <p class="h2">${s} - ${r}</p>
     <p class="h5">${i.replaceAll("\n","</br>")}</p>
-  </div>`}(r);eV.infoElem.innerHTML=n,function(){let t=document.querySelector('[data-action="delete"]'),e=document.querySelector('[data-action="update"]');t.addEventListener("click",eG),e.addEventListener("click",eY)}()}function eK(t){t.preventDefault();let e=t.target,r={},n=new FormData(e);n.forEach((t,e)=>{""!=t.toString()&&(r[e]=t)}),r.lyrics.replaceAll("\n","</br>"),ez.saveLyrics({tempo:130,tune:0,...r}),e.reset()}function eG(t){let e=t.target.dataset.id;ez.deleteRecord(e),eV.infoElem.innerHTML="",eV.lyricList.innerHTML=eJ(ez.list)}function eY(t){!function(t,e){let r=JSON.parse(localStorage.getItem("item"));t.innerHTML=function(t){let{desc:e,author:r="NoName",idx:n,lyrics:i,name:o,title:s,tune:a,id:u}=t;return`<form class="create-form js-update-form" data-id="${u}">
+  </div>`}(r);eV.infoElem.innerHTML=n,function(){let t=document.querySelector('[data-action="delete"]'),e=document.querySelector('[data-action="update"]');t.addEventListener("click",eG),e.addEventListener("click",eY)}()}function eK(t){t.preventDefault();let e=t.target,r={},n=new FormData(e);n.forEach((t,e)=>{""!=t.toString()&&(r[e]=t)}),r.name=`${r.idx}_${r.title}`,ez.saveLyrics({tempo:130,tune:0,...r}),e.reset()}function eG(t){let e=t.target.dataset.id;ez.deleteRecord(e),eV.infoElem.innerHTML="",eV.lyricList.innerHTML=eJ(ez.list)}function eY(t){!function(t,e){let r=JSON.parse(localStorage.getItem("item"));t.innerHTML=function(t){let{desc:e,author:r="NoName",idx:n,lyrics:i,name:o,title:s,tune:a,id:u}=t;return`<form class="create-form js-update-form" data-id="${u}">
 <input type="number" placeholder="idx" name="idx" required min="0" value="${n}"/>
-<input type="text" placeholder="name" name="name" required value="${o}"/>
 <input type="text" placeholder="title" name="title" required value="${s}"/>
 <input type="text" placeholder="author" name="author" value="${r}"/>
 <input type="number" placeholder="tempo" name="tempo"/>
@@ -537,7 +536,7 @@ ${t.name}
 <textarea placeholder="lyrics" name="lyrics">${i}</textarea>
 <textarea placeholder="desc" name="desc">${e}</textarea>
 <button class="btn btn-primary">Update Data</button>
-</form>`}(r);let n=document.querySelector(".js-update-form");n.addEventListener("submit",e)}(eV.modalElem,eX),eQ()}function eX(t){t.preventDefault();let e=t.target.dataset.id;console.log(e);let r=t.target,n={},i=new FormData(r);i.forEach((t,e)=>{n[e]=t}),n.lyrics.replaceAll("\n","</br>"),ez.updateItem({id:e,...n}),eZ()}// =============================
+</form>`}(r);let n=document.querySelector(".js-update-form");n.addEventListener("submit",e)}(eV.modalElem,eX),eQ()}function eX(t){t.preventDefault();let e=t.target.dataset.id;console.log(e);let r=t.target,n={},i=new FormData(r);i.forEach((t,e)=>{n[e]=t}),n.name=`${n.idx}_${n.title}`,ez.updateItem({id:e,...n}),eZ()}// =============================
 function eQ(){console.log("test"),document.body.classList.remove("hide-modal")}function eZ(){document.body.classList.add("hide-modal")}eV.lyricList.addEventListener("click",eW),eV.newBtnElem.addEventListener("click",function(){(function(t,e){t.innerHTML=`<form class="create-form js-create-form">
 <input type="number" placeholder="idx" name="idx" required min="0" />
 <input type="text" placeholder="name" name="name" required />
@@ -554,6 +553,6 @@ function eQ(){console.log("test"),document.body.classList.remove("hide-modal")}f
 <textarea placeholder="lyrics" name="lyrics"></textarea>
 <textarea placeholder="desc" name="desc"></textarea>
 <button class="btn btn-primary">Save Data</button>
-</form>`;let r=document.querySelector(".js-create-form");r.addEventListener("submit",e)})(eV.modalElem,eK),eQ()}),eV.backdropElem.addEventListener("click",function(t){t.target===t.currentTarget&&eZ()}),async function(){let t=await ez.getList(),e=eJ(t.lyrics);eV.lyricList.innerHTML=e}();//# sourceMappingURL=index.e4ead7ee.js.map
+</form>`;let r=document.querySelector(".js-create-form");r.addEventListener("submit",e)})(eV.modalElem,eK),eQ()}),eV.backdropElem.addEventListener("click",function(t){t.target===t.currentTarget&&eZ()}),async function(){let t=await ez.getList(),e=eJ(t.lyrics);eV.lyricList.innerHTML=e}();//# sourceMappingURL=index.5e560b38.js.map
 
-//# sourceMappingURL=index.e4ead7ee.js.map
+//# sourceMappingURL=index.5e560b38.js.map
