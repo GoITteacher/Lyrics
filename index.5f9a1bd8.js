@@ -539,7 +539,6 @@ ${t.name}
 </form>`}(r);let n=document.querySelector(".js-update-form");n.addEventListener("submit",e)}(eV.modalElem,eX),eQ()}function eX(t){t.preventDefault();let e=t.target.dataset.id;console.log(e);let r=t.target,n={},i=new FormData(r);i.forEach((t,e)=>{n[e]=t}),n.name=`${n.idx}_${n.title}`,ez.updateItem({id:e,...n}),eZ()}// =============================
 function eQ(){console.log("test"),document.body.classList.remove("hide-modal")}function eZ(){document.body.classList.add("hide-modal")}eV.lyricList.addEventListener("click",eW),eV.newBtnElem.addEventListener("click",function(){(function(t,e){t.innerHTML=`<form class="create-form js-create-form">
 <input type="number" placeholder="idx" name="idx" required min="0" />
-<input type="text" placeholder="name" name="name" required />
 <input type="text" placeholder="title" name="title" required />
 <input type="text" placeholder="author" name="author" />
 <input type="number" placeholder="tempo" name="tempo"/>
@@ -553,6 +552,6 @@ function eQ(){console.log("test"),document.body.classList.remove("hide-modal")}f
 <textarea placeholder="lyrics" name="lyrics"></textarea>
 <textarea placeholder="desc" name="desc"></textarea>
 <button class="btn btn-primary">Save Data</button>
-</form>`;let r=document.querySelector(".js-create-form");r.addEventListener("submit",e)})(eV.modalElem,eK),eQ()}),eV.backdropElem.addEventListener("click",function(t){t.target===t.currentTarget&&eZ()}),async function(){let t=await ez.getList(),e=eJ(t.lyrics);eV.lyricList.innerHTML=e}();//# sourceMappingURL=index.5e560b38.js.map
+</form>`;let r=document.querySelector(".js-create-form");r.addEventListener("submit",e)})(eV.modalElem,eK),eQ()}),eV.backdropElem.addEventListener("click",function(t){t.target===t.currentTarget&&eZ()}),async function(){let t=await ez.getList(),e=eJ(t.lyrics);eV.lyricList.innerHTML=e}();//# sourceMappingURL=index.5f9a1bd8.js.map
 
-//# sourceMappingURL=index.5e560b38.js.map
+//# sourceMappingURL=index.5f9a1bd8.js.map
