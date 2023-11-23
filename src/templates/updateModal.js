@@ -9,7 +9,6 @@ function template(item) {
   const { desc, author = "NoName", idx, lyrics, name, title, tune, id } = item;
   return `<form class="create-form js-update-form" data-id="${id}">
 <input type="number" placeholder="idx" name="idx" required min="0" value="${idx}"/>
-<input type="text" placeholder="name" name="name" required value="${name}"/>
 <input type="text" placeholder="title" name="title" required value="${title}"/>
 <input type="text" placeholder="author" name="author" value="${author}"/>
 <input type="number" placeholder="tempo" name="tempo"/>

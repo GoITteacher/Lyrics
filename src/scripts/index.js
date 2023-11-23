@@ -39,7 +39,8 @@ function onCreateFormSubmit(e) {
       obj[key] = value;
     }
   });
-  obj.lyrics.replaceAll("\n", "</br>");
+  obj.name = `${obj.idx}_${obj.title}`;
+
   LyricsDB.saveLyrics({
     tempo: 130,
     tune: 0,
@@ -71,8 +72,8 @@ function onSaveUpdateInfo(e) {
   formData.forEach((value, key) => {
     obj[key] = value;
   });
-  obj.lyrics.replaceAll("\n", "</br>");
 
+  obj.name = `${obj.idx}_${obj.title}`;
   LyricsDB.updateItem({ id, ...obj });
   hideModal();
 }
