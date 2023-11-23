@@ -10,14 +10,13 @@ function template() {
 <input type="text" placeholder="name" name="name" required />
 <input type="text" placeholder="title" name="title" required />
 <input type="text" placeholder="author" name="author" />
+<input type="number" placeholder="tempo" name="tempo"/>
 <input
   type="number"
   placeholder="tune"
   min="-12"
   max="12"
   name="tune"
-  required
-  value="0"
 />
 <textarea placeholder="lyrics" name="lyrics"></textarea>
 <textarea placeholder="desc" name="desc"></textarea>

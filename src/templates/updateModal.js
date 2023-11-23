@@ -12,6 +12,7 @@ function template(item) {
 <input type="text" placeholder="name" name="name" required value="${name}"/>
 <input type="text" placeholder="title" name="title" required value="${title}"/>
 <input type="text" placeholder="author" name="author" value="${author}"/>
+<input type="number" placeholder="tempo" name="tempo"/>
 <input
   type="number"
   placeholder="tune"

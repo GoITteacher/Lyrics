@@ -1,5 +1,5 @@
 import axios from "axios";
-const password = prompt("Enter password");
+const password = getPassword();
 const axios2 = axios.create({
   baseURL: "https://lr6q6s5yl4.execute-api.us-east-2.amazonaws.com/dev/records",
   params: {
@@ -31,9 +31,11 @@ export class LyricsDB {
 
   static async updateItem(obj) {
     const res = await axios2.patch("", obj);
+    LyricsDB.list = LyricsDB.list.filter((el) => el.id != obj.id);
     const { id, name } = res.data;
     const item = { id, name };
     this.updateList(item);
+    console.log("UPDATE", obj.id, res.data);
     return res.data;
   }
 
@@ -57,3 +59,38 @@ export class LyricsDB {
     return res.data;
   }
 }
+
+function getPassword() {
+  let pass = localStorage.getItem("password");
+  if (!pass) {
+    pass = prompt("Enter Password");
+    savePassword(pass);
+  }
+  return pass;
+}
+
+function savePassword(password) {
+  localStorage.setItem("password", password);
+}
+
+window.deleteItem = (id) => {
+  LyricsDB.list = LyricsDB.list.filter((el) => el.id !== id);
+  axios2.put("", LyricsDB.list);
+};
+
+window.addItem = (id, name) => {
+  LyricsDB.list.push({ id, name });
+  axios2.put("", LyricsDB.list);
+};
+
+window.getList = () => {
+  console.log(LyricsDB.list);
+};
+
+window.updateItem = (oldId, newId) => {
+  const oldItem = LyricsDB.list.find((el) => el.id == oldId);
+  oldItem.id = newId;
+  axios2.put("", LyricsDB.list);
+};
+
+window.password = getPassword;

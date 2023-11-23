@@ -35,10 +35,16 @@ function onCreateFormSubmit(e) {
   const obj = {};
   const formData = new FormData(form);
   formData.forEach((value, key) => {
-    obj[key] = value;
+    if (value.toString() != "") {
+      obj[key] = value;
+    }
   });
   obj.lyrics.replaceAll("\n", "</br>");
-  LyricsDB.saveLyrics(obj);
+  LyricsDB.saveLyrics({
+    tempo: 130,
+    tune: 0,
+    ...obj,
+  });
   form.reset();
 }
 function onBackdropClick(e) {
